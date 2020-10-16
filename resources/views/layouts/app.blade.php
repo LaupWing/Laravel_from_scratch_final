@@ -23,7 +23,12 @@
     <div id="app">
          <section class="px-8">
             <header class="container mx-auto">
-               <h1>Tweety</h1>
+               <h1>
+                  <img 
+                     src="/images/logo.svg" 
+                     alt="Tweety"
+                  >
+               </h1>
             </header>
          </section>
          <section class="px-8">
