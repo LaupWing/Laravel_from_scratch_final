@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+   return view('welcome');
 });
+
+Route::post('/tweets', [App\Http\Controllers\TweetController::class, 'store']);
 
 Auth::routes();
 
