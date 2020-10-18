@@ -8,7 +8,9 @@
       >
    </div>
    <div>
-      <h5 class="font-bold mb-4">John Doe</h5>
-      <p class="text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat eius, deserunt est mollitia tenetur quibusdam voluptatem doloremque recusandae quam distinctio architecto ea inventore, amet perspiciatis quas assumenda consectetur? Voluptas, nostrum.</p>
+      <h5 class="font-bold mb-4">{{$tweet->user->name}}</h5>
+      <p class="text-sm">
+         {{$tweet->body}}
+      </p>
    </div>   
 </div>
