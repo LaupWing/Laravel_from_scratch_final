@@ -48,7 +48,6 @@ class User extends Authenticatable
 
    public function follow(User $user)
    {
-      dd($this->follows()->save($user));
       return $this->follows()->save($user);
    }
 
