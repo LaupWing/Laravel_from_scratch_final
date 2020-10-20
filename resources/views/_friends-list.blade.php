@@ -1,6 +1,6 @@
 <h3 class="font-bold text-xl mb-4">Friends</h3>
 <ul>
-   @foreach (auth()->user()->follows as $user)
+   @foreach (current_user()->follows as $user)
    <li class="mb-4">
       <div>
          <a href="{{ route('profile', $user->name)}}" class="flex items-center text-sm">

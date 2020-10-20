@@ -50,7 +50,7 @@
    <li>
       <a
          class="font-bold text-lg mb-4 block"
-         href="{{route('profile', auth()->user()->name)}}"
+         href="{{route('profile', current_user()->name)}}"
        >
          Profile
       </a>
