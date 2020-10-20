@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfilesController;
+use App\Http\Controllers\TweetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +20,10 @@ Route::get('/', function () {
 });
 
 Route::middleware('auth')->group(function () {
-   Route::get('/tweets', [App\Http\Controllers\TweetController::class, 'index'])->name('home');
-   Route::post('/tweets', [App\Http\Controllers\TweetController::class, 'store']);
+   Route::get('/tweets', [TweetController::class, 'index'])->name('home');
+   Route::post('/tweets', [TweetController::class, 'store']);
 });
+Route::get('/profiles/{user}', [ProfilesController::class, 'show'])->name('profile');
 
-Route::get('/profiles/{user}', [App\Http\Controllers\ProfilesController::class, 'show']);
 
 Auth::routes();
