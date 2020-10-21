@@ -23,6 +23,7 @@ class User extends Authenticatable
       'username',
       'email',
       'password',
+      'avatar'
    ];
 
    /**
@@ -59,5 +60,9 @@ class User extends Authenticatable
       $path =  route('profile', $this->username);
 
       return $append ? "{$path}/{$append}" : $path;
+   }
+   public function getAvatarAttribute($value)
+   {
+      return asset($value);
    }
 }
