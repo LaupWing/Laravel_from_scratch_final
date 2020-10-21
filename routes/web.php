@@ -34,10 +34,10 @@ Route::middleware('auth')->group(function () {
       '/profiles/{user:username}',
       [ProfilesController::class, 'update']
    )->middleware('can:edit,user');
+   Route::get('/explore', [ExplorerController::class, 'index']);
 });
 
 Route::get('/profiles/{user:username}', [ProfilesController::class, 'show'])->name('profile');
 
-Route::get('/explore', [ExplorerController::class, 'index']);
 
 Auth::routes();
