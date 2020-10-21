@@ -1,5 +1,9 @@
 <x-app>
-   <form method="POST" action="{{$user->path()}}">
+   <form 
+      method="POST" 
+      action="{{$user->path()}}" 
+      enctype="multipart/form-data"
+   >
       @csrf
       @method('PATCH')
       
@@ -62,11 +66,11 @@
                id="avatar"
                accept="image/*"
             >
-            <img 
+            {{-- <img 
                src="{{ $user->avatar }}"
                alt="your avatar"
                width="40"
-            >
+            > --}}
          </div>
 
          @error('avatar')

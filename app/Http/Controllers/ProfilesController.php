@@ -20,6 +20,8 @@ class ProfilesController extends Controller
 
    public function update(User $user)
    {
+      // dd(request['avatar']);
+      dd(request('avatar'));
       $attributes = request()->validate([
          'username' => [
             'string',
