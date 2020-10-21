@@ -20,8 +20,6 @@ class ProfilesController extends Controller
 
    public function update(User $user)
    {
-      // dd(request['avatar']);
-      dd(request('avatar'));
       $attributes = request()->validate([
          'username' => [
             'string',
@@ -44,5 +42,7 @@ class ProfilesController extends Controller
       $attributes['avatar'] = request('avatar')->store('avatars');
 
       $user->update($attributes);
+
+      return redirect($user->path());
    }
 }
