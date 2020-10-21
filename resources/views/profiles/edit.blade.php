@@ -66,11 +66,11 @@
                id="avatar"
                accept="image/*"
             >
-            {{-- <img 
+            <img 
                src="{{ $user->avatar }}"
                alt="your avatar"
                width="40"
-            > --}}
+            >
          </div>
 
          @error('avatar')

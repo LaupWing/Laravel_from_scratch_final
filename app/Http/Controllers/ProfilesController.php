@@ -46,3 +46,5 @@ class ProfilesController extends Controller
       return redirect($user->path());
    }
 }
+
+// https://breakthrough.org/wp-content/uploads/2018/10/default-placeholder-image.png

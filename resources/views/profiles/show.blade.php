@@ -10,7 +10,7 @@
             src="{{$user->avatar}}" 
             alt="avatar"
             class="rounded-full mr-2 absolute bottom-0 transform -translate-x-1/2 translate-y-1/2"
-            style="width: 150px; left: 50%"
+            style="height:150px; width: 150px; left: 50%"
          >
       </div>
       <div class="flex justify-between items-center mb-6">
