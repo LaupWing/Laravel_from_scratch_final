@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExplorerController;
 use App\Http\Controllers\FollowsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfilesController;
@@ -29,9 +30,14 @@ Route::middleware('auth')->group(function () {
       '/profiles/{user:username}/edit',
       [ProfilesController::class, 'edit']
    )->middleware('can:edit,user');
-   Route::patch('/profiles/{user:username}', [ProfilesController::class, 'update']);
+   Route::patch(
+      '/profiles/{user:username}',
+      [ProfilesController::class, 'update']
+   )->middleware('can:edit,user');
 });
+
 Route::get('/profiles/{user:username}', [ProfilesController::class, 'show'])->name('profile');
 
+Route::get('/explore', [ExplorerController::class, 'index']);
 
 Auth::routes();

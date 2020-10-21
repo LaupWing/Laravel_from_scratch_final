@@ -51,16 +51,24 @@ class User extends Authenticatable
 
       return Tweet::whereIn('user_id', $ids)->latest()->get();
    }
+
+   public function setPasswordAttribute($value)
+   {
+      $this->attributes['password'] = bcrypt($value);
+   }
+
    public function tweets()
    {
       return $this->hasMany(Tweet::class)->latest();
    }
+
    public function path($append = '')
    {
       $path =  route('profile', $this->username);
 
       return $append ? "{$path}/{$append}" : $path;
    }
+
    public function getAvatarAttribute($value)
    {
       return asset('storage/' . $value);
